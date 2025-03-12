@@ -65,7 +65,7 @@ for arg in "$@"
 do
     case $arg in
         --build_type=*)
-        BUILD_TYPE=("${arg#*=}")
+        BUILD_TYPE=Debug
         shift # Remove argument name from processing
         ;;
         --build_tests=*)

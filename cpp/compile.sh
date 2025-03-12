@@ -16,7 +16,7 @@
 # deprecated, replaced by cmake command
 set -exu
 
-BUILD_TYPE=release
+BUILD_TYPE=debug
 BUILD_VELOX_BACKEND=OFF
 BUILD_TESTS=OFF
 BUILD_EXAMPLES=OFF

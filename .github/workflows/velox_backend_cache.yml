@@ -34,7 +34,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Get Ccache
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: '${{ env.CCACHE_DIR }}'
           key: ccache-centos7-release-default-${{github.sha}}
@@ -48,7 +48,7 @@ jobs:
             bash dev/ci-velox-buildstatic-centos-7.sh
           "
       - name: Save Ccache
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@v4
         id: ccache
         with:
           path: '${{ env.CCACHE_DIR }}'
@@ -58,9 +58,9 @@ jobs:
     runs-on: ubuntu-20.04
     container: apache/gluten:centos-8-jdk8
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Get Ccache
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: '${{ env.CCACHE_DIR }}'
           key: ccache-centos8-release-default-${{github.sha}}
@@ -72,7 +72,7 @@ jobs:
           bash dev/ci-velox-buildshared-centos-8.sh
           ccache -s
       - name: Save Ccache
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@v4
         id: ccache
         with:
           path: '${{ env.CCACHE_DIR }}'
@@ -86,7 +86,7 @@ jobs:
   #   steps:
   #     - uses: actions/checkout@v2
   #     - name: Get Ccache
-  #       uses: actions/cache/restore@v3
+  #       uses: actions/cache/restore@v4
   #       with:
   #         path: '${{ env.CCACHE_DIR }}'
   #         key: ccache-ubuntu-release-default
@@ -106,7 +106,7 @@ jobs:
   #       run: |
   #         ccache -vs
 
-  #     - uses: actions/cache/save@v3
+  #     - uses: actions/cache/save@v4
   #       with:
   #         path: '${{ env.CCACHE_DIR }}'
   #         key: ccache-ubuntu-release-default
@@ -124,7 +124,7 @@ jobs:
 #          tar -xvf apache-maven-3.8.8-bin.tar.gz
 #          mv apache-maven-3.8.8 /usr/lib/maven
 #      - name: Get Ccache
-#        uses: actions/cache/restore@v3
+#        uses: actions/cache/restore@v4
 #        with:
 #          path: '${{ env.CCACHE_DIR }}'
 #          key: ccache-centos-release-default
@@ -145,7 +145,7 @@ jobs:
 #        run: |
 #          ccache -s
 #
-#      - uses: actions/cache/save@v3
+#      - uses: actions/cache/save@v4
 #        with:
 #          path: '${{ env.CCACHE_DIR }}'
 #          key: ccache-centos-release-default

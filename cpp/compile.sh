@@ -50,7 +50,7 @@ for arg in "$@"; do
     shift # Remove argument name from processing
     ;;
   --build_type=*)
-    BUILD_TYPE=debug
+    BUILD_TYPE=("${arg#*=}")
     shift # Remove argument name from processing
     ;;
   --build_velox_backend=*)
